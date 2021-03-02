@@ -46,7 +46,13 @@
         <el-input type="text" placeholder="详细地址" v-model="ruleForm.addressDetail" required></el-input>
       </el-form-item>
       <el-form-item class="btn-form" style="text-align: center">
-        <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+        <el-button type="primary"
+                   :loading="loading"
+                   loading-text="注册中"
+                   :disabled="reLoading">提交
+<!--                   @click="submitForm('ruleForm')"-->
+
+        </el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
       </el-form-item>
     </el-form>
@@ -59,6 +65,8 @@
     name: "Register",
     data(){
       return{
+        reLoading:false,
+        loading:false,
         ruleForm:{
             surname:'',
             name:'',

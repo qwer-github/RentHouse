@@ -8,7 +8,7 @@
 <!--    轮播图-->
 <!--    <carsouel></carsouel>-->
 <!--    房源推荐-->
-    <tab-control :titles="['整租','合租','','','']" class="control"></tab-control>
+    <tab-control :titles="['整 租','合 租',]" class="control"></tab-control>
 <!--    房源列表-->
     <house-list></house-list>
   </div>
@@ -73,6 +73,8 @@
     z-index: 9;
   }
   .control{
+    position: sticky;
+    top:44px;
     background-color:darkseagreen;
   }
 </style>

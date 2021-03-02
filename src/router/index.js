@@ -4,8 +4,8 @@ import VueRouter from 'vue-router'
 const Home=()=>import('../views/home/Home')
 const Collect=()=>import('../views/collect/Collect')
 const Profile=()=>import('../views/profile/Profile')
-const Loging=()=>import('../views/melogin/Loging')
-const Register=()=>import('../views/register/Register')
+const Loging=()=>import('../components/content/melogin/Loging')
+const Register=()=>import('../components/content/register/Register')
 const SourceHouseDetail= ()=>import('../views/add/SourceHouseDetail')
 Vue.use(VueRouter)
 
