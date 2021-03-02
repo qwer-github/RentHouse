@@ -4,6 +4,7 @@
     <div class="nav">
       <el-button icon="el-icon-back" class="close-btn" @click="back"></el-button>
 <!--      <button class="close-btn" @click="back">返回</button>-->
+
     </div>
     <h1 style="text-align: center">欢迎登录</h1>
   </header>

@@ -50,8 +50,6 @@
                    :loading="loading"
                    loading-text="注册中"
                    :disabled="reLoading">提交
-<!--                   @click="submitForm('ruleForm')"-->
-
         </el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
       </el-form-item>
