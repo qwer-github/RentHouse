@@ -45,13 +45,18 @@
       <el-form-item prop="addressDetail">
         <el-input type="text" placeholder="详细地址" v-model="ruleForm.addressDetail" required></el-input>
       </el-form-item>
+<!--      提交-->
       <el-form-item class="btn-form" style="text-align: center">
         <el-button type="primary"
-                   :loading="loading"
-                   loading-text="注册中"
-                   :disabled="reLoading">提交
+                   @click="submitForm('ruleForm')">提交
         </el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
+        <!--        :loading="loading"-->
+        <!--        loading-text="注册中"-->
+        <!--        :disabled="reLoading"-->
+<!--        重置-->
+        <el-button
+                @click="resetForm('ruleForm')">重置
+        </el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -61,45 +66,59 @@
   export default {
 
     name: "Register",
-    data(){
-      return{
-        reLoading:false,
-        loading:false,
-        ruleForm:{
-            surname:'',
-            name:'',
-            sex:'',
-            dataOfBirth:'',
-            phone:'',
-            idno:'',
-            email:'',
-            password:'',
-            addressProvice:'',
-            addressCity:'',
-            addressCounty:'',
-            addressDetail:''
-          }
+    data() {
+      return {
+        ruleForm: {
+          surname: '',
+          name: '',
+          sex: '',
+          dataOfBirth: '',
+          phone: '',
+          idno: '',
+          email: '',
+          password: '',
+          addressProvice: '',
+          addressCity: '',
+          addressCounty: '',
+          addressDetail: ''
+        }
       }
     },
-    methods:{
-      back(){
+    methods: {
+      back() {
         console.log('点击返回');
         this.$router.replace('/home');
       },
       resetForm(formName) {
         this.$refs[formName].resetFields();
       },
+// 提交-------------------------
       submitForm(formName) {
-        console.log('成功');
-        this.$router.replace('/melogin');
-        // this.$refs[formName].validate((valid) => {
-        //   if (valid) {
-        //     alert('submit!');
-        //   } else {
-        //     console.log('error submit!!');
-        //     return false;
+        // console.log('成功');
+        // this.$router.replace('/melogin');
+
+        console.log("submit!");
+        this.$refs.upload.submit();
+        this.param.append("surname", this.ruleForm.surname);
+        this.param.append("name", this.ruleForm.name);
+        this.param.append("sex", this.ruleForm.sex);
+        this.param.append("dataOfBirth", this.ruleForm.dataOfBirth);
+        this.param.append("phone", this.ruleForm.phone);
+        this.param.append("idno", this.ruleForm.idno);
+        this.param.append("email", this.ruleForm.email);
+        this.param.append("password", this.ruleForm.password);
+        this.param.append("addressProvice", this.ruleForm.addressProvice);
+        this.param.append("addressCity", this.ruleForm.addressCity);
+        this.param.append("addressCounty", this.ruleForm.addressCounty);
+        this.param.append("addressDetail", this.ruleForm.addressDetail);
+        // let config = {
+        //   headers: {
+        //     'Content-Type': 'multipart/form-data'
         //   }
-        // })
+        // }
+        axios.post("http://localhost:5200/renting/swagger-ui.html#!/SysLoginController/registerUsingPOST", this.param).then(function (result) {
+          console.log(result);
+        });
       }
     }
   }

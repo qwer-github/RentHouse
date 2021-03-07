@@ -1,7 +1,7 @@
 <template>
   <div class="source">
-    <div>
-      这里是添加的房源
+    <div style="text-align: center">
+      暂无房源信息
     </div>
   </div>
 

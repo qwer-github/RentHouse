@@ -1,8 +1,8 @@
 import axios from "axios";
 export function request(config) {
   const instance1=axios.create({
-    baseURL:'http://123.207.32.32:8000'
-    // baseURL:'http://localhost:5200/renting'
+    // baseURL:'http://123.207.32.32:8000'
+    baseURL:'http://localhost:5200/renting'
   })
   return instance1(config)
 }

@@ -1,34 +1,38 @@
 <template>
-  <div class="loginbef">
+  <div class="loginheader">
     <a><img src="~assets/img/tabbar/my.jpg" alt=""></a>
-<!--    <div v-if="!this.$store.state.user"-->
-<!--         @click="gotolink">-->
-<!--      <span class="button">登录/注册</span>-->
+<!--    <div>-->
+<!--      <el-avatar icon="el-icon-user-solid"></el-avatar>-->
 <!--    </div>-->
-<!--&lt;!&ndash;  用户已登录,用户名为导航名&ndash;&gt;-->
-<!--    <div v-else>-->
-<!--      <span>{{this.$store.state.user}}</span>-->
-<!--    </div>-->
-    <div @click="gotolink"><span class="button">登陆/注册</span></div>
+    <div class="info">
+      姓名：
+      <label>{{input1}}</label>
+      <br>
+      手机号：
+      <label>{{input2}}</label>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "LoginBefore",
-    methods:{
-      gotolink(){
-        // this.$router.replace('/LoginAfter')
-        this.$router.replace('/melogin')
-        console.log('监听跳转点击');
+    name: "LoginHeader",
+    data(){
+      return{
+       input1:"张三",
+       input2:'12456465456'
       }
+    },
+    methods:{
+
 
     }
   }
 </script>
 
 <style scoped>
-.loginbef{
+
+.loginheader{
   background-color: #42b983;
 
 }
@@ -55,5 +59,7 @@
   margin: 4px 2px;
   cursor: pointer;
 }
-
+.info{
+  float: right;
+}
 </style>

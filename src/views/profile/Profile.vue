@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
 <!--    登陆-->
-    <login-before></login-before>
+    <login-header></login-header>
 <!--    添加房源-->
     <add-house></add-house>
 <!--    房源信息-->
@@ -10,14 +10,14 @@
 </template>
 
 <script>
-  import LoginBefore from "./login/LoginBefore";
+  import LoginHeader from "./login/LoginHeader";
   import AddHouse from "./login/AddHouse";
   import AddSourceHouse from "./login/AddSourceHouse";
 
   export default {
     name: "Profile",
     components:{
-      LoginBefore,
+     LoginHeader,
       AddHouse,
       AddSourceHouse
 

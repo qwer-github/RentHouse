@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="list">
     <ul>
       <li>列表</li>
       <li>列表</li>
@@ -92,15 +92,15 @@
       <li>列表</li>
       <li>列表</li>
       <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
+      <li>列表2</li>
+      <li>列表3</li>
+      <li>列表4</li>
+      <li>列表5</li>
+      <li>列表6</li>
+      <li>列表7</li>
+      <li>列表8</li>
+      <li>列表9</li>
+      <li>列表10</li>
     </ul>
   </div>
 </template>
@@ -117,5 +117,7 @@
 </script>
 
 <style scoped>
-
+.list{
+  padding-bottom: 120px;
+}
 </style>
