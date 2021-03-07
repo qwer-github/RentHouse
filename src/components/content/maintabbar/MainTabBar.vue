@@ -25,7 +25,7 @@
       </template>
     </tab-bar-item>
 <!--               我的                              -->
-    <tab-bar-item path="/melogin" activeColor="#42b983">
+    <tab-bar-item path="/profile" activeColor="#42b983">
       <template v-slot:item-icon-active>
         <img src="../../../assets/img/tabbar/my_active.jpg" alt="">
       </template>

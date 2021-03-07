@@ -16,28 +16,47 @@ const routes = [
   },
   {
     path: '/home',
-    component:Home
+    component:Home,
+    meta:{
+      MainTabBarShow:true,
+      requireAuth:true
+    }
   },
   {
     path: '/collect',
-    component:Collect
-  },
-  {
-    path: '/melogin',
-    component:Loging
+    component:Collect,
+    meta:{
+      MainTabBarShow:true
+    }
   },
   {
     path: '/profile',
-    component:Profile
+    component:Profile,
+    meta:{
+      MainTabBarShow:true
+    }
   },
-
+//   登陆
+  {
+    path: '/melogin',
+    component:Loging,
+    meta:{
+      MainTabBarShow:true
+    }
+  },
   {
     path: '/register',
-    component:Register
+    component:Register,
+    meta:{
+      MainTabBarShow:false
+    }
   },
   {
     path: '/add',
-    component:SourceHouseDetail
+    component:SourceHouseDetail,
+    meta:{
+      MainTabBarShow:false
+    }
   }
 ]
 

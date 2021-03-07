@@ -51,8 +51,7 @@
             { required: true, message: '请输入密码', trigger: 'blur'  }
           ]
         },
-  // 保存登陆后的数据
-        logindata:[]
+        // logindata:[]
       }
     },
     methods:{
@@ -72,12 +71,12 @@
               }
             }).then((res)=>{
 
-              this.logindata=res.data
-              console.log(this.logindata);
-              // 判断后端数据data中的状态码是否是成功的状态码
+               // 判断后端数据data中的状态码是否是成功的状态码
               // 成功后调取获取用户信息的方法，
               // 接下来操作就在用户信息的方法中操作
               if (res.data.code==200){
+                localStorage.setItem("user",res.data);
+                console.log('user');
                 this.$router.replace('/profile')
               }else {
                 this.$message.error("用户名或密码不存在")

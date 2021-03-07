@@ -7,26 +7,30 @@
     <div class="info">
       姓名：
       <label>{{input1}}</label>
-      <br>
-      手机号：
-      <label>{{input2}}</label>
     </div>
+<!--    <el-button @click="backlogin">点击返回登陆</el-button>-->
   </div>
 </template>
 
 <script>
   export default {
     name: "LoginHeader",
+
     data(){
       return{
-       input1:"张三",
-       input2:'12456465456'
+       input1:'',
       }
-    },
-    methods:{
-
+    },created() {
+      let loginname=localStorage.getItem("user")
+      console.log('这是name');
+      console.log(loginname)
 
     }
+    // methods:{
+    //   backlogin(){
+    //     this.$router.replace('/melogin')
+    //   }
+    // }
   }
 </script>
 
@@ -60,6 +64,9 @@
   cursor: pointer;
 }
 .info{
+  /*text-align: center;*/
   float: right;
+  margin-top: 20px;
+  margin-right: 80px;
 }
 </style>
